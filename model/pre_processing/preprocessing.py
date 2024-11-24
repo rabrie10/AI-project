@@ -77,9 +77,11 @@ def preprocessing(input_file, text_column, output_file=None):
 
 
 # Path to the input .tsv file
-input_file = "C:/Users/mbnas/.spyder-py3/AI-project/subjectivity_determiner/data/subtask-2-english/test_en_gold.tsv"
+input_file = r"C:\Users\welde\Documents\GitHub\AI-project\subjectivity_determiner\data\subtask-2-english\train_en.tsv"
+
 text_column = "sentence"  # Column to process
-output_file = "C:/Users/mbnas/.spyder-py3/AI-project/model/preprocessed_data/processed_test_en_gold.tsv"
+output_file = r"C:\Users\welde\Documents\GitHub\AI-project\model\preprocessed_data\processed_train_en_2.tsv"
+
 
 # Run preprocessing
 processed_df = preprocessing(input_file, text_column, output_file)
