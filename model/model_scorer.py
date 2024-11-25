@@ -102,12 +102,12 @@ def evaluate_model(test_data_file, prediction_file, output_dir="evaluation_outpu
 
 # Usage
 test_data_file = "C:/Users/mbnas/.spyder-py3/AI-project/subjectivity_determiner/data/subtask-2-english/test_en_gold.tsv"  # Your testing data file path
-prediction_file = "C:/Users/mbnas/.spyder-py3/AI-project/model_outputs/voting_predictions.tsv"  # Your model output file path
+prediction_file = "C:/Users/mbnas/.spyder-py3/AI-project/model_outputs/final_predictions_knn.tsv"  # Your model output file path
 
 evaluation_results = evaluate_model(
     test_data_file, 
     prediction_file, 
     "C:/Users/mbnas/.spyder-py3/AI-project/evaluation_scores_data", 
-    "voting"
+    "KNN"
 )
 
