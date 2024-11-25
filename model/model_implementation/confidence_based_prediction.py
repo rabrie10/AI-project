@@ -91,10 +91,10 @@ def confidence_based_prediction(obj_model, nb_model, X, threshold=0.6):
 #%% Evaluate on Dev Set (for early validation)
 y_dev_pred = confidence_based_prediction(best_obj_model, best_nb_model, X_dev_tfidf)
 
-print(classification_report(y_test, y_dev_pred, target_names=label_encoder.classes_))
+print(classification_report(y_dev, y_dev_pred, target_names=label_encoder.classes_))
 #%% Evaluate on Dev Test Set (final evaluation before Test)
 y_dev_test_pred = confidence_based_prediction(best_obj_model, best_nb_model, X_dev_test_tfidf)
-print(classification_report(y_test, y_dev_test_pred, target_names=label_encoder.classes_))
+print(classification_report(y_dev_test, y_dev_test_pred, target_names=label_encoder.classes_))
 
 #%% Evaluate on Test Set and Save Results
 y_test_pred = confidence_based_prediction(best_obj_model, best_nb_model, X_test_tfidf)
@@ -102,7 +102,7 @@ y_test_pred = confidence_based_prediction(best_obj_model, best_nb_model, X_test_
 # Decode predictions and save results
 y_test_pred_labels = label_encoder.inverse_transform(y_test_pred)
 output_test = pd.DataFrame({'sentence_id': test_data['sentence_id'], 'label': y_test_pred_labels})
-output_test.to_csv("C:/Users/mbnas/.spyder-py3/final_predictions_with_nb_and_xgb.tsv", sep='\t', index=False)
+output_test.to_csv("C:/Users/mbnas/.spyder-py3/AI-project/model_outputs/final_predictions_with_nb_and_xgb_confidence_based.tsv", sep='\t', index=False)
 
 #%% Metrics and Confusion Matrix for Test Set
 print("Test Set Evaluation with XGBoost and Naive Bayes:")

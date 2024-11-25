@@ -117,7 +117,7 @@ for name, clf in ensemble_methods.items():
         'sentence_id': test_df['sentence_id'],  # Ensure 'sentence_id' exists in your test_df
         'label': y_pred_test
     })
-    output_file = f"C:/Users/mbnas/.spyder-py3/{name.lower()}_predictions.tsv"
+    output_file = f"C:/Users/mbnas/.spyder-py3/AI-project/model_outputs/{name.lower()}_predictions.tsv"
     output_test.to_csv(output_file, sep='\t', index=False)
     print(f"Predictions for {name} saved to {output_file}")
     

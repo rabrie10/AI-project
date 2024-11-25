@@ -118,7 +118,7 @@ y_test_pred_labels = label_encoder.inverse_transform(y_test_pred)
 
 #%% Step 9: Save the final predictions on the test dataset in the required TSV format
 output = pd.DataFrame({'sentence_id': test_df['sentence_id'], 'label': y_test_pred_labels})
-output.to_csv("C:/Users/mbnas/.spyder-py3/final_predictions_rf.tsv", sep='\t', index=False)
+output.to_csv("C:/Users/mbnas/.spyder-py3/AI-project/model_outputs/final_predictions_rf.tsv", sep='\t', index=False)
 
 
 

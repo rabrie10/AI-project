@@ -125,5 +125,5 @@ plt.show()
 #%%
 # Step 10: Save final predictions
 output = pd.DataFrame({'sentence_id': test_data['sentence_id'], 'label': test_pred})
-output.to_csv("C:/Users/mbnas/.spyder-py3/final_predictions_nb.tsv", sep='\t', index=False)
+output.to_csv("C:/Users/mbnas/.spyder-py3/AI-project/model_outputs/final_predictions_nb.tsv", sep='\t', index=False)
 
