@@ -47,7 +47,7 @@ optimizer, lr_schedule = create_optimizer(
     init_lr=5e-5,
     num_train_steps=num_train_steps,
     num_warmup_steps=num_warmup_steps,
-    weight_decay_rate=0.01
+    weight_decay_rate=0.05
 )
 
 
@@ -55,7 +55,7 @@ optimizer, lr_schedule = create_optimizer(
 model.compile(optimizer=optimizer, metrics=['accuracy'])
 
 # Step 5: Train the BERT model
-history = model.fit(train_dataset, epochs=3, validation_data=test_dataset)
+history = model.fit(train_dataset, epochs=4, validation_data=test_dataset)
 
 # Step 6: Evaluate the model
 y_pred_probs = model.predict(test_dataset).logits
@@ -63,8 +63,10 @@ y_pred = tf.argmax(y_pred_probs, axis=1).numpy()
 
 # Classification report
 print("Classification Report:\n", classification_report(test_df['label'], y_pred, target_names=['OBJ', 'SUBJ']))
-
-# Step 7: Plot confusion matrix
+# step 7: make a output file
+output = pd.DataFrame({'sentence_id': test_df['sentence_id'], 'label': y_pred})
+output.to_csv(r"C:\Users\welde\Documents\GitHub\AI-project\model_outputs\BERT_prediction.tsv", sep='\t', index=False)
+# Step 8: Plot confusion matrix
 cm = confusion_matrix(test_df['label'], y_pred)
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=['OBJ', 'SUBJ'], yticklabels=['OBJ', 'SUBJ'])
 plt.xlabel("Predicted Label")
