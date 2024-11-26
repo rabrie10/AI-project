@@ -8,9 +8,9 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
 # Last inn datasett (endre filbaner om nødvendig)
-train_df = pd.read_csv("/workspaces/oving9/ai/proccessed_train_en_feature_extracted.tsv", sep='\t')
-dev_df = pd.read_csv("/workspaces/oving9/ai/processed_dev_en.tsv", sep='\t')
-test_df = pd.read_csv("/workspaces/oving9/ai/processed_test_en_gold.tsv", sep='\t')
+train_df = pd.read_csv("model/preprocessed_data/proccessed_train_en_feature_extracted.tsv", sep='\t')
+dev_df = pd.read_csv("model/preprocessed_data/processed_dev_test_en.tsv", sep='\t')
+test_df = pd.read_csv("model/preprocessed_data/processed_test_en_gold.tsv", sep='\t')
 
 # Forbered data (hent tekst og etiketter)
 X_train = train_df['sentence']
